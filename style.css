@@ -56,6 +56,7 @@ header {
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
+  padding-bottom: 10px;
 }
 
 .logo {
@@ -83,6 +84,9 @@ header nav ul li a:hover {
 form {
   border: 2px solid #ff385c;
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
 form label {
@@ -116,4 +120,163 @@ footer p {
   padding: 20px;
 }
 
+
+#about, #ideas, #host {
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* Navigation */
+header nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+/* Form */
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+form button {
+  width: 100%;
+}
+
+/* Images */
+main img {
+  width: 100%;
+}
+
+
+/* Images under About */
+#about img {
+  margin: 10px; 
+}
+
+#ideas h3 {
+  text-align: start;
+}
+
+
+
+
+
+
+
+
 /* -------  Media Query ------- */
+
+@media (min-width: 768px) {
+  /* 1. Align the "thinkfulbnb" title and the navigation in one line */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px; /* To add some space below the navigation buttons */
+  }
+
+  .logo {
+    text-align: left;
+  }
+
+  header nav ul {
+    justify-content: flex-end;
+  }
+
+
+   /* 2. Form layout for desktop */
+  /* Form */
+  .form-row {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .form-row div {
+    display: flex;
+    flex-direction: column;
+    width: 15%; 
+  }
+
+  form button {
+    width: auto;
+    padding: 10px 20px;
+  }
+
+  /* 3. Positioning elements in the About section */
+  #about {
+    flex-direction: column; /* to stack h2 and div vertically */
+    align-items: center; /* to center h2 and div horizontally */
+  }
+
+  #about h2 {
+    width: 100%;
+    text-align: center;
+  }
+
+  #about .about-content {
+    display: flex; /* to arrange img and p horizontally */
+    justify-content: space-around; /* to distribute img and p evenly */
+    width: 100%; /* to make sure div takes the full width */
+  }
+
+  #about img {
+    width: 25%; /* adjust as necessary to manage image size */
+  }
+
+  #about p {
+    align-self: center; /* to center p vertically */
+  }
+
+
+  /* 4. Arrange photos in a 2x2 layout in the Ideas section */
+  #ideas .group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  #ideas .idea-item {
+    width: 45%; /* adjust as necessary to get 2 items per line */
+  }
+
+
+  /* 5. Positioning elements in the Host section */
+  #host .group {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #host img {
+    width: 45%; /* adjust as necessary to manage image size */
+  }
+
+  #host .host-text {
+    width: 45%; /* adjust as necessary to manage text block size */
+  }
+
+  .group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .host-text {
+    margin-right: 20px;
+  }
+  
+}
