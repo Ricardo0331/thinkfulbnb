@@ -181,7 +181,7 @@ main img {
 
 /* -------  Media Query ------- */
 
-@media (min-width: 768px) {
+@media (min-width: 480px) {
   /* 1. Align the "thinkfulbnb" title and the navigation in one line */
   header {
     display: flex;
