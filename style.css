@@ -187,15 +187,22 @@ main img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 10px; /* To add some space below the navigation buttons */
+    padding: 10px; /* Padding around the header */
+    width: 100%; /* Ensures that the header takes the full width of the viewport */
+    box-sizing: border-box; /* This makes sure padding is included in the width */
   }
 
   .logo {
     text-align: left;
+    font-size: 1.5em; /* Adjust the font size as needed */
+    flex: 1; /* This tells the logo to take up as much space as it can */
   }
 
   header nav ul {
     justify-content: flex-end;
+    flex: 1; /* This tells the navigation to take up as much space as it can */
+    margin: 0; /* Removes margin */
+    padding: 0; /* Removes padding */
   }
 
 
@@ -203,19 +210,30 @@ main img {
   /* Form */
   .form-row {
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start; /* align items to the top */
     justify-content: space-between;
+    flex-wrap: wrap; /* allow form items to wrap to next line */
   }
 
   .form-row div {
     display: flex;
     flex-direction: column;
-    width: 15%; 
+    flex: 1; /* use flex basis instead of width */
+    min-width: 150px; /* increase min-width */
+    max-width: 200px; /* set max-width */
+    margin: 10px; /* add margin to create some space between form items */
+  }
+
+  .form-row div input {
+    height: 30px; /* adjust as needed */
   }
 
   form button {
-    width: auto;
+    flex: 1; /* use flex basis instead of width */
     padding: 10px 20px;
+    min-width: 150px; /* set a minimum width for the button */
+    max-width: 200px; /* set a max-width for the button */
+    margin: 10px; /* add margin to create some space between form items */
   }
 
   /* 3. Positioning elements in the About section */
